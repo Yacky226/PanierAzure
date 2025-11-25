@@ -15,14 +15,6 @@ L'architecture cloud native repose sur les composants suivants :
 
 <!-- end list -->
 
-```mermaid
-graph LR
-    User(Client) --> ACA[Azure Container App\n(Load Balancer)]
-    ACA --> Pod[Conteneur .NET 9]
-    Pod --> Redis[(Azure Redis Cache)]
-    ACR[[Azure Container Registry]] -.->|Pull Image| ACA
-```
-
 ## 🛠 Prérequis
 
 - **Docker Desktop** installé localement.
