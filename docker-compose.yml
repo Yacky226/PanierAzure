@@ -1,0 +1,27 @@
+services:
+  redis:
+    image: redis:7
+    container_name: cart_redis_db
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+  
+  app:
+    build:
+      context: ./Panier.API
+      dockerfile: Dockerfile
+    container_name: cart_api_service
+    depends_on:
+      - redis
+    ports:
+      - "5153:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ConnectionStrings__Redis=redis:6379
+    restart: on-failure
+
+volumes:
+  redis_data:

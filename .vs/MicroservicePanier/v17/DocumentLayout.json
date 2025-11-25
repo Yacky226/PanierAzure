@@ -1,0 +1,301 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\dto\\panierdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\dto\\panierdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\dto\\panieritemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\dto\\panieritemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\models\\panier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\models\\panier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\models\\panieritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\models\\panieritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\models\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\models\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\services\\redispanierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\services\\redispanierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\dto\\produitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\dto\\produitdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\services\\ipanierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\services\\ipanierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\endpoints\\panierendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\endpoints\\panierendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\dto\\produitdtorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\dto\\produitdtorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\panier.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\panier.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C8F42C4-669A-4816-8459-10D2CC390E66}|\u00C9l\u00E9ments de solution{1C8F42C4-669A-4816-8459-10D2CC390E66}|C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1C8F42C4-669A-4816-8459-10D2CC390E66}|\u00C9l\u00E9ments de solution{1C8F42C4-669A-4816-8459-10D2CC390E66}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|c:\\users\\x390 yoga\\documents\\code_ilisi_3\\nouveau dossier\\microservicepanier\\panier.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{82E5ACA0-33ED-4425-9EE8-0D4AB1AA01FC}|Panier.API\\Panier.API.csproj|solutionrelative:panier.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PanierDTO.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\PanierDTO.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Dto\\PanierDTO.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\PanierDTO.cs",
+              "RelativeToolTip": "Panier.API\\Dto\\PanierDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T08:24:55.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RedisPanierService.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Services\\RedisPanierService.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Services\\RedisPanierService.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Services\\RedisPanierService.cs",
+              "RelativeToolTip": "Panier.API\\Services\\RedisPanierService.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwFwAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:41:49.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PanierItem.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Models\\PanierItem.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Models\\PanierItem.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Models\\PanierItem.cs",
+              "RelativeToolTip": "Panier.API\\Models\\PanierItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:50:40.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Produit.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Models\\Produit.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Models\\Produit.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Models\\Produit.cs",
+              "RelativeToolTip": "Panier.API\\Models\\Produit.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:50:24.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProduitDTO.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\ProduitDTO.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Dto\\ProduitDTO.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\ProduitDTO.cs",
+              "RelativeToolTip": "Panier.API\\Dto\\ProduitDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:41:35.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PanierEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Endpoints\\PanierEndpoints.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Endpoints\\PanierEndpoints.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Endpoints\\PanierEndpoints.cs",
+              "RelativeToolTip": "Panier.API\\Endpoints\\PanierEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:42:22.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPanierService.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Services\\IPanierService.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Services\\IPanierService.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Services\\IPanierService.cs",
+              "RelativeToolTip": "Panier.API\\Services\\IPanierService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:42:59.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Panier.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Models\\Panier.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Models\\Panier.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Models\\Panier.cs",
+              "RelativeToolTip": "Panier.API\\Models\\Panier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:50:35.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PanierItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\PanierItemDTO.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Dto\\PanierItemDTO.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\PanierItemDTO.cs",
+              "RelativeToolTip": "Panier.API\\Dto\\PanierItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T20:50:10.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProduitDTORequest.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\ProduitDTORequest.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Dto\\ProduitDTORequest.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dto\\ProduitDTORequest.cs",
+              "RelativeToolTip": "Panier.API\\Dto\\ProduitDTORequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T08:20:45.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Program.cs",
+              "RelativeDocumentMoniker": "Panier.API\\Program.cs",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Program.cs",
+              "RelativeToolTip": "Panier.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T21:09:31.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dockerfile",
+              "RelativeDocumentMoniker": "Panier.API\\Dockerfile",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Dockerfile",
+              "RelativeToolTip": "Panier.API\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-11T09:53:48.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-11-10T20:29:15.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Panier.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Panier.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-10T21:22:15.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Panier.API.http",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Panier.API.http",
+              "RelativeDocumentMoniker": "Panier.API\\Panier.API.http",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\Panier.API.http",
+              "RelativeToolTip": "Panier.API\\Panier.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-11-24T13:14:40.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Panier.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\appsettings.json",
+              "RelativeToolTip": "Panier.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-10T21:21:48.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Panier.API\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\x390 yoga\\Documents\\code_ilisi_3\\Nouveau dossier\\MicroservicePanier\\Panier.API\\appsettings.Development.json",
+              "RelativeToolTip": "Panier.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-11T09:59:26.201Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

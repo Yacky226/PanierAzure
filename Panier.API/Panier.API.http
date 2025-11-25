@@ -1,0 +1,10 @@
+@Panier.API_HostAddress = http://localhost:5153
+
+GET {{Panier.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{Panier.API_HostAddress}}/api/produits
+
+###
