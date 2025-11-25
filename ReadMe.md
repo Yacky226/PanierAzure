@@ -1,310 +1,140 @@
-# Rapport de déploiement
+# Microservice Panier - Azure Container Apps
 
-## Déploiement du microservice _MicroservicePanier_ sur Microsoft Azure
+Ce projet est une API de gestion de panier développée en **ASP.NET Core (.NET 9)**. Elle est conçue pour être déployée sur **Azure Container Apps (ACA)**, offrant une architecture **Serverless**, scalable et capable de s'éteindre complètement (Scale-to-Zero) pour optimiser les coûts.
 
-### **1. Introduction**
+## Le lien de deploiement : https://panier-app.nicemoss-e410f043.spaincentral.azurecontainerapps.io
 
-Ce rapport présente le processus complet de déploiement du microservice _MicroservicePanier_ (API panier développée en ASP.NET Core) dans l’environnement cloud Microsoft Azure.
-L’architecture utilisée repose sur :
+## Architecture
 
-- Un **conteneur Docker** hébergeant l’API
-- Un **Azure Container Registry (ACR)** pour stocker l'image Docker
-- Un **Azure App Service Linux** pour exécuter le microservice
-- Un **Azure Cache for Redis** pour la gestion du cache dans le panier
+L'architecture cloud native repose sur les composants suivants :
 
-L’objectif est d’obtenir un déploiement scalable, sécurisé et automatisé, compatible avec les architectures microservices.
+- **Azure Container Apps (ACA)** : Hébergement du microservice (Serverless Containers).
+- **Azure Container Registry (ACR)** : Registre privé pour stocker l'image Docker.
+- **Azure Cache for Redis** : Base de données en mémoire pour une persistance rapide des paniers.
+- **KEDA (intégré)** : Gestion de l'autoscaling (de 0 à N instances).
 
----
+<!-- end list -->
 
----
-
-# 🎯 2. Architecture globale
-
-### Composants utilisés :
-
-- **Microservice Panier (.NET 9 / Redis)**
-- **Azure Container Registry (ACR)** : stockage privé de l'image `cart_api:latest`
-- **Azure App Service (Web App for Containers)** : exécution scalable du conteneur
-- **Azure Cache for Redis** : stockage en cache rapide pour les paniers utilisateur
-- **Azure CLI** : automatisation du provisioning et du déploiement
-
-### Diagramme logique (textuel)
-
-```
-Client → Azure App Service → Conteneur Docker (.NET API)
-                     ↓
-                  Redis Cache (Azure)
-                     ↓
-       Azure Container Registry (stockage image)
+```mermaid
+graph LR
+    User(Client) --> ACA[Azure Container App\n(Load Balancer)]
+    ACA --> Pod[Conteneur .NET 9]
+    Pod --> Redis[(Azure Redis Cache)]
+    ACR[[Azure Container Registry]] -.->|Pull Image| ACA
 ```
 
----
+## 🛠 Prérequis
 
----
+- **Docker Desktop** installé localement.
+- **Azure CLI** installé et connecté (`az login`).
+- Souscription Azure active (compatible "Azure for Students").
 
-# 🛠 3. Préparation de l'environnement
+## Guide de Déploiement
 
-## 3.1. Prérequis locaux
+### 1\. Préparation des ressources
 
-- Docker Desktop installé
-- Azure CLI installé (`az version`)
-- Compte Azure actif
-- Code source compilé du microservice
-
-## 3.2. Connexion à Azure
+Définition des variables (PowerShell) :
 
 ```powershell
-az login
-az account set --subscription "MySubscription"
+$RG = "DefaultResourceGroup-ESC"       # Groupe de ressources (selon disponibilité région)
+$Location = "spaincentral"             # Région
+$ACR_Name = "registrynet9xyz"          # Nom unique du registre
+$Env_Name = "my-env"                   # Environnement Container Apps
+$App_Name = "panier-app"               # Nom du microservice
 ```
 
----
+### 2\. Build & Push de l'image Docker
 
----
-
-# 📦 4. Création du registre ACR
-
-## 4.1. Création du Resource Group
+Si ce n'est pas déjà fait, construisez et poussez l'image vers Azure :
 
 ```powershell
-az group create --name myResourceGroup --location westeurope
+# Création du registre
+az acr create --resource-group $RG --name $ACR_Name --sku Basic --admin-enabled true
+
+# Connexion & Push
+az acr login --name $ACR_Name
+docker build -t $ACR_Name.azurecr.io/cart_api:latest .
+docker push $ACR_Name.azurecr.io/cart_api:latest
 ```
 
-## 4.2. Création du registre
+### 3\. Création de l'infrastructure Container Apps
+
+Création de l'environnement géré :
 
 ```powershell
-az acr create --resource-group myResourceGroup --name registrynet9xyz --sku Basic --admin-enabled true
+az containerapp env create `
+  --name $Env_Name `
+  --resource-group $RG `
+  --location $Location
 ```
 
-## 4.3. Vérification de l'état
+### 4\. Déploiement du Microservice
+
+Déploiement de l'application avec configuration du port 80 :
 
 ```powershell
-az provider show -n Microsoft.ContainerRegistry --query "registrationState" -o tsv
+# Récupération automatique du mot de passe ACR
+$AcrPass = az acr credential show --name $ACR_Name --resource-group $RG --query "passwords[0].value" -o tsv
+
+# Création de l'App
+az containerapp create `
+  --name $App_Name `
+  --resource-group $RG `
+  --environment $Env_Name `
+  --image "$ACR_Name.azurecr.io/cart_api:latest" `
+  --target-port 80 `
+  --ingress external `
+  --registry-server "$ACR_Name.azurecr.io" `
+  --registry-username $ACR_Name `
+  --registry-password $AcrPass `
+  --min-replicas 0 `
+  --max-replicas 5 `
+  --set-env-vars ASPNETCORE_URLS="http://+:80"
 ```
 
-Résultat attendu :
+> **Note :** `min-replicas 0` active le "Scale to Zero". L'application s'éteint si elle n'est pas utilisée (coût = 0€).
 
-```
-Registered
-```
+### 5\. Connexion à Redis Cache
 
----
+Pour que le panier fonctionne, il faut lier le cache Redis et autoriser la connexion.
 
----
+1.  **Récupérer la clé Redis :**
 
-# 🐳 5. Build & Push de l’image Docker
+    ```powershell
+    $RedisKey = az redis list-keys -g $RG -n "RedisPanierCache" --query primaryKey -o tsv
+    ```
 
-## 5.1. Connexion à ACR
+2.  **Autoriser l'accès réseau (Firewall) :**
+    _Indispensable si Redis et l'App sont dans des régions différentes._
 
-```powershell
-az acr login --name registrynet9xyz
-```
+    ```powershell
+    az redis firewall-rules create --name "RedisPanierCache" --resource-group $RG --rule-name AllowAll --start-ip 0.0.0.0 --end-ip 255.255.255.255
+    ```
 
-## 5.2. Build de l'image
+3.  **Injecter la connexion dans l'App :**
 
-```powershell
-docker build -t registrynet9xyz.azurecr.io/cart_api:latest .
-```
+    ```powershell
+    az containerapp update `
+      --name $App_Name `
+      --resource-group $RG `
+      --set-env-vars ConnectionStrings__Redis="RedisPanierCache.redis.cache.windows.net:6380,password=$RedisKey,ssl=True,abortConnect=False"
+    ```
 
-## 5.3. Push vers ACR
+## Documentation de l'API
 
-```powershell
-docker push registrynet9xyz.azurecr.io/cart_api:latest
-```
+L'API est accessible via l'URL publique fournie par Azure Container Apps.
 
-## 5.4. Vérification
+## Le lien de deploiement : https://panier-app.nicemoss-e410f043.spaincentral.azurecontainerapps.io
 
-```powershell
-az acr repository list --name registrynet9xyz -o table
-```
+| Méthode    | Endpoint                          | Description                                  |
+| :--------- | :-------------------------------- | :------------------------------------------- |
+| **GET**    | `/api/panier/{userId}`            | Récupère le panier d'un utilisateur.         |
+| **POST**   | `/api/panier/{userId}/items`      | Ajoute un article ou met à jour la quantité. |
+| **PUT**    | `/api/panier/{userId}/items/{id}` | Modifie la quantité d'un article spécifique. |
+| **DELETE** | `/api/panier/{userId}/items/{id}` | Supprime un article du panier.               |
+| **DELETE** | `/api/panier/{userId}`            | Vide le panier complet.                      |
 
----
-
----
-
-# 🚀 6. Déploiement du conteneur sur Azure App Service
-
-## 6.1. Création du plan App Service Linux
-
-```powershell
-az appservice plan create --name myPlan --resource-group myResourceGroup --sku B1 --is-linux
-```
-
-## 6.2. Création de la Web App
-
-```powershell
-az webapp create `
-  --resource-group myResourceGroup `
-  --plan myPlan `
-  --name my-cart-api `
-  --deployment-container-image-name registrynet9xyz.azurecr.io/cart_api:latest
-```
-
-## 6.3. Configuration de la connexion entre Web App et ACR
-
-```powershell
-az acr credential show --name registrynet9xyz
-```
-
-Puis configuration :
-
-```powershell
-az webapp config container set --name my-cart-api --resource-group myResourceGroup `
-  --container-image-name registrynet9xyz.azurecr.io/cart_api:latest `
-  --container-registry-url https://registrynet9xyz.azurecr.io `
-  --container-registry-user registrynet9xyz `
-  --container-registry-password "<password>"
-```
-
----
-
----
-
-# 🔥 7. Mise en place de Redis Cache
-
-## 7.1. Création de l'instance Redis
-
-```powershell
-az redis create `
-  --name RedisPanierCache `
-  --resource-group myResourceGroup `
-  --location westeurope `
-  --sku Basic --vm-size C0
-```
-
-## 7.2. Récupération du host et du mot de passe
-
-```powershell
-az redis show --name RedisPanierCache --resource-group myResourceGroup --query "hostName" -o tsv
-az redis list-keys --name RedisPanierCache --resource-group myResourceGroup
-```
-
----
-
----
-
-# ⚙️ 8. Configuration des variables d'environnement
-
-```powershell
-az webapp config appsettings set `
-  --resource-group myResourceGroup `
-  --name my-cart-api `
-  --settings `
-    ASPNETCORE_ENVIRONMENT=Production `
-    ASPNETCORE_URLS="http://+:80" `
-    ConnectionStrings__Redis="RedisPanierCache.redis.cache.windows.net:6380,password=<primaryKey>,ssl=True,abortConnect=False"
-```
-
-Vérification :
-
-```powershell
-az webapp config appsettings list --resource-group myResourceGroup --name my-cart-api -o table
-```
-
----
-
----
-
-# 🧪 9. Tests & Validation
-
-## 9.1. Récupération de l’URL publique
-
-```powershell
-az webapp show --resource-group myResourceGroup --name my-cart-api --query "defaultHostName" -o tsv
-```
-
-→ `https://my-cart-api.azurewebsites.net`
-
-## 9.2. Test du health endpoint
-
-```powershell
-Invoke-RestMethod "https://my-cart-api.azurewebsites.net/"
-```
-
-## 9.3. Suivi des logs en continu
-
-```powershell
-az webapp log tail --resource-group myResourceGroup --name my-cart-api
-```
-
-Les logs affichent :
-
-```
-Application started.
-Hosting environment: Production
-Now listening on http://[::]:80
-Redis connecté
-```
-
----
-
----
-
-# 📈 10. Résultat final
-
-Le microservice est désormais :
-
-- Déployé dans un environnement entièrement managé
-- Stocké sous forme d'image Docker dans ACR
-- Exécuté dans Azure App Service Linux
-- Connecté à Azure Cache for Redis pour la persistance du panier
-- Accessible via l'URL publique :
-
-  ```
-  https://my-cart-api.azurewebsites.net
-  ```
-
-- Mis en logs en temps réel via Azure Log Streaming
-
-L'architecture est **scalable**, **sécurisée**, **conteneurisée**, et prête pour une architecture microservices multi-composants.
-
----
-
----
-
-# 📡 11. Documentation de l'API
-
-L'API expose les endpoints suivants pour la gestion du panier. Tous les endpoints sont préfixés par `/api/panier`.
-
-## 11.1. Récupérer le panier
-
-**GET** `/{userId}`
-
-Récupère le panier complet pour un utilisateur donné.
-
-**Paramètres :**
-
-- `userId` (string) : Identifiant unique de l'utilisateur.
-
-**Réponse (200 OK) :**
-
-```json
-{
-  "id": 0,
-  "userId": "user123",
-  "items": [
-    {
-      "id": 0,
-      "quantity": 2,
-      "sousTotal": 199.98,
-      "produit": {
-        "id": 101,
-        "nom": "Casque Audio",
-        "prix": 99.99
-      }
-    }
-  ],
-  "total": 199.98
-}
-```
-
-## 11.2. Ajouter un produit
-
-**POST** `/{userId}/items`
-
-Ajoute un produit au panier ou incrémente sa quantité s'il existe déjà.
-
-**Corps de la requête (JSON) :**
+### Exemple de Payload (POST)
 
 ```json
 {
@@ -314,46 +144,3 @@ Ajoute un produit au panier ou incrémente sa quantité s'il existe déjà.
   "quantity": 1
 }
 ```
-
-## 11.3. Mettre à jour la quantité
-
-**PUT** `/{userId}/items/{produitId}`
-
-Modifie la quantité d'un produit spécifique dans le panier.
-
-**Paramètres :**
-
-- `produitId` (int) : ID du produit à modifier.
-
-**Corps de la requête (JSON) :**
-
-```json
-{
-  "quantity": 5
-}
-```
-
-## 11.4. Supprimer un produit
-
-**DELETE** `/{userId}/items/{produitId}`
-
-Retire un produit spécifique du panier.
-
-## 11.5. Vider le panier
-
-**DELETE** `/{userId}`
-
-Supprime tous les articles du panier de l'utilisateur.
-
----
-
----
-
-# 📚 12. Conclusion
-
-Ce déploiement démontre une mise en production moderne basée sur :
-
-- Le CI/CD manuel via Docker
-- Le stockage sécurisé d’images via ACR
-- Le hosting conteneurisé via App Service
-- Les services managés comme Redis Cache
